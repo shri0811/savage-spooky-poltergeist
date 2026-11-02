@@ -31,10 +31,15 @@ Further validation is required to determine whether the application incorrectly 
 
 ## Steps to Reproduce
 1).Open the application and start OTP verification using an authorized test account.
+
 2).Launch Burp Suite and configure the browser proxy.
+
 3).Intercept the OTP verification POST request.
+
 4).Identify the endpoint: /api/v1/uwa/auth/otp/verify.
+
 5).Forward the request, examine the server response, and modify the response in the testing environment.
+
 6).Verify whether the application actually grants access or only displays a success message.
 
 ## Original Server Response
