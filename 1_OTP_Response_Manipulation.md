@@ -86,14 +86,6 @@ Content-Length: 53
 {"statusCode":200,"message":"Successful"}
 
 
-## Observations
-
-- The original server response rejected the OTP verification request.
-- The response was successfully modified using Burp Suite.
-- The modified response displayed a successful verification message.
-- Backend verification must be tested independently to establish whether authentication can actually be bypassed.
-
-
 ## POC
 
 Screenshots documenting the original and modified responses:
