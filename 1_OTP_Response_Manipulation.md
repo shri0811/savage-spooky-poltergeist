@@ -1,13 +1,18 @@
-# OTP Verification: Response Manipulation Using Burp Suite
+## Title 
+OTP Verification: Response Manipulation Using Burp Suite
+
 
 ## Vulnerability Type
 OTP Verification – Response Manipulation / Client-Side Trust Issue
 
+
 ## Target Application
 Taskbear Web Application
 
+
 ## Vulnerable Endpoint
 `POST /api/v1/uwa/auth/otp/verify`
+
 
 ## Description
 
@@ -22,6 +27,7 @@ The response was then modified in Burp Suite to display a `200 OK` status code a
 This demonstrates that HTTP responses can be manipulated on the client side. However, changing the displayed response does not prove that the backend has accepted the invalid OTP.
 
 Further validation is required to determine whether the application incorrectly trusts client-side verification results.
+
 
 ## Steps to Reproduce
 
@@ -58,6 +64,7 @@ Content-Length: 61
 
 {"statusCode":401,"message":"OTP invalid or expired"}
 
+
 ## Modified Response
 
 **HTTP Status:** `200 OK`
@@ -77,6 +84,7 @@ X-Ratelimit-Reset: 1
 Content-Length: 53
 
 {"statusCode":200,"message":"Successful"}
+
 
 ## Observations
 
@@ -105,6 +113,7 @@ Potential consequences include:
 - Weakening of multi-factor authentication.
 
 These impacts are conditional and require confirmation through authorized testing.
+
 
 ## Remediation
 
