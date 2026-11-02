@@ -23,13 +23,6 @@ This demonstrates that HTTP responses can be manipulated on the client side. How
 
 Further validation is required to determine whether the application incorrectly trusts client-side verification results.
 
-## Tools Used
-
-- Burp Suite
-- Web Browser
-- Burp Proxy / Intercept
-- Repeater or Response Editing
-
 ## Steps to Reproduce
 
 1. Open the application in a web browser.
