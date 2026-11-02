@@ -49,23 +49,41 @@ Further validation is required to determine whether the application incorrectly 
 
 **HTTP Status:** `401 Unauthorized`
 
-```json
-{
-  "statusCode": 401,
-  "message": "OTP invalid or expired"
-}
-```
+HTTP/2 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: https://taskbear.com.au
+Alt-Svc: h3=":443"; ma=2592000
+Content-Type: application/json; charset=utf-8
+Date: Fri, 30 Oct 2026 12:20:33 GMT
+Etag: W/"35-ztW9fC5WL9mEe1dXWml1pD/iaR0"
+Vary: Origin, Accept-Encoding
+X-Powered-By: Express
+X-Ratelimit-Limit: 10
+X-Ratelimit-Remaining: 9
+X-Ratelimit-Reset: 1
+Content-Length: 61
+
+{"statusCode":401,"message":"OTP invalid or expired"}
 
 ## Modified Response
 
 **HTTP Status:** `200 OK`
 
-```json
-{
-  "statusCode": 200,
-  "message": "Successful"
-}
-```
+HTTP/2 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: https://taskbear.com.au
+Alt-Svc: h3=":443"; ma=2592000
+Content-Type: application/json; charset=utf-8
+Date: Fri, 30 Oct 2026 12:20:33 GMT
+Etag: W/"35-ztW9fC5WL9mEe1dXWml1pD/iaR0"
+Vary: Origin, Accept-Encoding
+X-Powered-By: Express
+X-Ratelimit-Limit: 10
+X-Ratelimit-Remaining: 9
+X-Ratelimit-Reset: 1
+Content-Length: 53
+
+{"statusCode":200,"message":"Successful"}
 
 ## Observations
 
@@ -95,7 +113,7 @@ These impacts are conditional and require confirmation through authorized testin
 5. Invalidate OTPs after successful verification.
 6. Ensure protected endpoints independently check the authenticated session and verification state.
 
-## Evidence
+## POC
 
 Screenshots documenting the original and modified responses:
 
@@ -103,7 +121,3 @@ Screenshots documenting the original and modified responses:
 <img width="1486" height="631" alt="image" src="https://github.com/user-attachments/assets/a6ef354b-6cad-499a-b07f-a4d97118fd5e" />
 <img width="1492" height="612" alt="image" src="https://github.com/user-attachments/assets/493e5b73-5468-497f-9b8c-25f956dda4e6" />
 
-
-## Learning Outcome
-
-Learned how to intercept HTTP requests and examine server responses using Burp Suite. Understood the difference between client-side response manipulation and an actual server-side authentication bypass.
