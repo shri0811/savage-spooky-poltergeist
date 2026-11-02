@@ -92,6 +92,15 @@ Content-Length: 53
 - The modified response displayed a successful verification message.
 - Backend verification must be tested independently to establish whether authentication can actually be bypassed.
 
+
+## POC
+
+Screenshots documenting the original and modified responses:
+
+<img width="1482" height="736" alt="image" src="https://github.com/user-attachments/assets/0df9f9a0-1930-4466-9217-78402f9de027" />
+<img width="1486" height="631" alt="image" src="https://github.com/user-attachments/assets/a6ef354b-6cad-499a-b07f-a4d97118fd5e" />
+<img width="1492" height="612" alt="image" src="https://github.com/user-attachments/assets/493e5b73-5468-497f-9b8c-25f956dda4e6" />
+
 ## Impact
 
 If an application trusts client-side response data instead of enforcing OTP verification on the server, an attacker may potentially bypass authentication controls.
@@ -112,12 +121,4 @@ These impacts are conditional and require confirmation through authorized testin
 4. Implement OTP expiry and attempt limits.
 5. Invalidate OTPs after successful verification.
 6. Ensure protected endpoints independently check the authenticated session and verification state.
-
-## POC
-
-Screenshots documenting the original and modified responses:
-
-<img width="1482" height="736" alt="image" src="https://github.com/user-attachments/assets/0df9f9a0-1930-4466-9217-78402f9de027" />
-<img width="1486" height="631" alt="image" src="https://github.com/user-attachments/assets/a6ef354b-6cad-499a-b07f-a4d97118fd5e" />
-<img width="1492" height="612" alt="image" src="https://github.com/user-attachments/assets/493e5b73-5468-497f-9b8c-25f956dda4e6" />
 
